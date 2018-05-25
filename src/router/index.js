@@ -1,14 +1,13 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
-import Goods from '@/view/goods'
+import Home from '@/view/home'
 
 Vue.use(Router)
 
 export default new Router({
   routes: [{
-    path: '/test',
-    name: 'test',
-    component: Test,
+    path: '/',
+    name: '首页',
+    component: Home,
   }]
 })

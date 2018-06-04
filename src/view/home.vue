@@ -7,10 +7,11 @@
   </div>
 </template>
 <script>
-import MyHeader from '@/components/myHeader'
-import Carousel from '@/components/carousel'
-import Activity from '@/components/activity'
-import Recommend from '@/components/recommend'
+import axios from 'axios'
+import MyHeader from "@/components/myHeader";
+import Carousel from "@/components/carousel";
+import Activity from "@/components/activity";
+import Recommend from "@/components/recommend";
 
 export default {
   name: "home",
@@ -25,7 +26,17 @@ export default {
       msg: "hello vue"
     };
   },
-  methods: {}
+  mounted() {
+    this.getIndexData();
+  },
+  methods: {
+    getIndexData() {
+      axios.get("/api/index").then(res => {
+        let data = res.data;
+        console.log(data);
+      });
+    }
+  }
 };
 </script>
 <style scoped>
